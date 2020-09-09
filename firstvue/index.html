@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="divport" content="width=device-width,initial-scale=1.0">
+    <title>王晨的VUE</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <h1>大家好，这是我的第一个vue页面</h1>
+    <!-- built files will be auto injected -->
+    
+    <div class="listcell">
+      <!-- <div class="banner"><text>\n</text></div> -->
+      <!-- 测试 -->
+      <form bindsubmit="formSubmit" bindreset="formReset">
+    
+        <div class="section">
+          <div class="section_title"><text decode="{{true}}">姓&nbsp; &nbsp; &ensp; 名：</text></div>
+          <input class="cell" name="name" placeholder="请输入姓名" />
+        </div>
+        <div class="section">
+          <div class="section_title">身份证号：</div>
+          <input class="cell" name="idcard" placeholder="请输入身份证号" password />
+        </div>
+        <!-- 上传健康码 -->
+        <div class="images">
+        <div class="top" > 上传健康码图片：
+          <button bindtap='upimg' class='tu'> 选择图片</button>
+        </div>
+       
+          <div class='tu1'>
+            <block wx:for="{{img_arr}}" wx:key="index">
+              <div class='logoinfo'>
+                <image class='logoinfo' mode="aspectFill" src='{{item}}' data-index="{{index}}" bindtap="predivImg" bindtap="deleteImg" name="headimage"></image>
+              </div>
+            </block>
+          </div>
+        </div>
+    
+        <!-- 提交 -->
+        <div class="btn-area">
+          <button class="btn-sub" formType="submit">提交</button>
+        </div>
+      </form>
+    
+    </div>
+
+</div>
+  </body>
+</html>
+
